@@ -2,13 +2,7 @@ module Loadosophia
 	module Api
 		class Object
 			def self.from(json)
-				if json[1].size > 1
-					json[1].map do |o|
-						self.new(o)
-					end
-				else
-					self.new(json[1][0])
-				end
+				self.new(json)
 			end
 
 			def initialize(data)
